@@ -15,7 +15,6 @@ class Product:
         self.set_name(name)
         self.set_price(price)
         self.set_quantity(quantity)
-        self.active = True
 
     def __str__(self):
         """
@@ -70,6 +69,8 @@ class Product:
         if quantity < 0:
             raise ValueError("Product quantity cannot be negative.")
         self.quantity = quantity
+        self.active = quantity > 0
+
 
     def get_quantity(self):
         """
@@ -143,5 +144,5 @@ class Product:
         if self.quantity - amount < 0:
             raise ValueError("Not enough stock to complete the purchase.")
 
-        self.quantity -= amount
+        self.set_quantity(self.quantity - amount)
         return self.get_amount_price(amount)
