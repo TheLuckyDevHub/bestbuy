@@ -3,7 +3,7 @@ class Product:
     Represents a product with a name, price, and quantity.
     """
 
-    def __init__(self, name, price, quantity):
+    def __init__(self, name: str, price: float, quantity: int):
         """
         Initializes a Product object.
 
@@ -22,7 +22,7 @@ class Product:
         """
         return f"{self.name} (${self.price:.2f} - {self.quantity} in stock)"
 
-    def set_name(self, name):
+    def set_name(self, name: str):
         """
         Sets the name of the product.
 
@@ -36,7 +36,7 @@ class Product:
             raise ValueError("Product name cannot be empty.")
         self.name = name
 
-    def set_price(self, price):
+    def set_price(self, price: float):
         """
         Sets the price of the product.
 
@@ -54,7 +54,7 @@ class Product:
             raise ValueError("Product price cannot be negative.")
         self.price = price
 
-    def set_quantity(self, quantity):
+    def set_quantity(self, quantity: int):
         """
         Sets the quantity of the product.
 
@@ -72,13 +72,13 @@ class Product:
         self.active = quantity > 0
 
 
-    def get_quantity(self):
+    def get_quantity(self) -> int:
         """
         Returns the quantity of the product.
         """
         return self.quantity
 
-    def is_active(self):
+    def is_active(self) -> bool:
         """
         Returns True if the product is active, False otherwise.
         """
@@ -96,13 +96,13 @@ class Product:
         """
         self.active = False
 
-    def show(self):
+    def show(self)-> str:
         """
         Returns a string with the product's details.
         """
         return f"Product: {self.name}, Price: {self.price:.2f}, Quantity: {self.quantity}"
 
-    def get_amount_price(self, amount):
+    def get_amount_price(self, amount: int) -> float:
         """
         Calculates the price for a given amount of the product.
 
@@ -122,7 +122,7 @@ class Product:
 
         return self.price * amount
 
-    def buy(self, amount):
+    def buy(self, amount: int)-> float:
         """
         Buys a given amount of the product.
 

@@ -14,7 +14,7 @@ def ini_store() -> Store:
     return Store(product_list)
 
 
-def view_products(store: Store) -> None:
+def view_products(store: Store) -> list[products.Product]:
     print("")
     print("=" * LINE_DRAW_SIZE)
     print("Available Products:")

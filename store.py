@@ -6,7 +6,7 @@ class Store:
     Represents a store that manages a collection of products.
     """
 
-    def __init__(self, products: list):
+    def __init__(self, products: list[Product]):
         """
         Initializes the store with a list of products.
 
@@ -27,7 +27,7 @@ class Store:
 
         self.products = products
 
-    def add_product(self, product):
+    def add_product(self, product: Product):
         """
         Adds a product to the store.
 
@@ -36,7 +36,7 @@ class Store:
         """
         self.products.append(product)
 
-    def remove_product(self, product):
+    def remove_product(self, product: Product):
         """
         Removes a product from the store.
 
@@ -54,7 +54,7 @@ class Store:
         """
         return sum(product.get_quantity() for product in self.products)
 
-    def get_all_products(self) -> list:
+    def get_all_products(self) -> list[Product]:
         """
         Returns a list of all active products in the store.
 
